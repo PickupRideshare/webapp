@@ -1,0 +1,13 @@
+{
+  "name": "PickUp",
+  "private": true,
+  "version": "0.0.0",
+  "description": "PickUp Webapp",
+  "keywords": [],
+  "dependencies": {
+    "firebase": "^4.13.1",
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3"
+  }
+}
