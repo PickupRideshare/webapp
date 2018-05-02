@@ -874,6 +874,12 @@ dd {
 .white-text {
   color: #fff;
 }
+.form-group {
+  margin: 15px;
+}
+.form-check {
+  margin: 10px;
+}
 .feature-block {
   padding-bottom: 60px;
   padding-top: 60px;
