@@ -5,9 +5,11 @@
   "description": "PickUp Webapp",
   "keywords": [],
   "dependencies": {
-    "firebase": "^4.13.1",
     "bootstrap": "^4.1.1",
+    "firebase": "^4.13.1",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.3"
+    "popper.js": "^1.14.3",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   }
 }
