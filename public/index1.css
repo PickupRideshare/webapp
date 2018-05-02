@@ -280,6 +280,8 @@ mark,
 }
 .text-center {
   text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 .text-justify {
   text-align: justify;
@@ -871,6 +873,12 @@ dd {
 }
 .white-text {
   color: #fff;
+}
+.form-group {
+  margin: 15px;
+}
+.form-check {
+  margin: 10px;
 }
 .feature-block {
   padding-bottom: 60px;
