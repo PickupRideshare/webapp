@@ -166,7 +166,9 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.33333333;
-  background-color: #fff;
+  background-         <div>
+                  <DayPickerInput/>
+            </div>: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -803,7 +805,7 @@ dd {
   color: #040d14;
 }
 .black-bg {
-  background: #040d14;
+  background-color: #040d14;
   color: #fff;
 }
 .btn-bordered {
