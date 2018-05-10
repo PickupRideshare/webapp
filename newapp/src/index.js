@@ -2,9 +2,16 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
 import registerServiceWorker from './registerServiceWorker';
-
+import DayPicker from './daypicker.js';
 
 class App extends Component{
+  constructor(props) {
+    super(props);
+
+    this.state = {
+    }
+    this.handleDayChange = this.handleDayChange.bind(this);
+  }
 
 render(){
 return(
@@ -209,6 +216,10 @@ return(
             </select>
             </div>
 
+            <div>
+              {DayPicker}
+            </div>
+
 
             <div class="form-check">
             <input class="form-check-input" name="radio" type="radio" id="Radios1" value="option1" checked/>
@@ -264,5 +275,5 @@ return(
 	);
 }
 }
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, <MyForm />, document.getElementById('root'));
 registerServiceWorker();
