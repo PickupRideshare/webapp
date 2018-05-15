@@ -1,19 +1,26 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import 'react-day-picker/lib/style.css';
 import './css/index.css';
-import { ButtonGroup, Button, Jumbotron, Nav, NavItem, NavDropdown, Navbar, Table, HelpBlock, Glyphicon } from 'react-bootstrap';
+import { Button, Navbar } from 'react-bootstrap';
 import registerServiceWorker from './registerServiceWorker';
-import DayPickerInput from './daypicker.js';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
+import SignUpModal from './sign-up-modal.jsx';
 
 class App extends Component{
   constructor(props) {
     super(props);
-    this.handleDayChange = this.handleDayChange.bind(this);
-    
+
     this.state = {
     selectedDay: undefined,
+    isLoggedIn: false,
+    showSignUp: false,
+    showSignIn: false,
     }
+
+    this.handleDayChange = this.handleDayChange.bind(this);
+    this.openSignUp = this.openSignUp.bind(this);
+    this.closeSignUp = this.closeSignUp.bind(this);
 
   }
 
@@ -23,39 +30,37 @@ class App extends Component{
     });
   }
 
+   openSignUp() {
+    this.setState({
+      showSignUp: true,
+      showSignIn: false,
+    });
+  }
+
+  closeSignUp() {
+    this.setState({
+      showSignUp: false,
+    });
+  }
+
   render(){
     const { selectedDay } = this.state;
     return(
     <div className="App">
-    <nav
-    className="navbar navbar-fixed-top
-    navbar-default"
-    role="navigation"
-    >
+      <Navbar collapseOnSelect={true}>
+        <Navbar.Header className="text-center">
+          <Button style={{float: 'right', margin: '10px', verticalAlign: 'top'}} bsStyle="primary" bsSize="small">Contact Us</Button>
+        {!this.state.isLoggedIn &&
+          <div>
+              <Button style={{float: 'right', margin: '10px', verticalAlign: 'top'}} bsStyle="primary" bsSize="small">SIGN IN</Button>
+              <Button bsSize="small" style={{float: 'right', margin: '5px', marginTop: '10px'}} onClick={this.openSignUp}>SIGN UP</Button>
+          </div>
+        }
+        </Navbar.Header>
+      </Navbar>
 
-    <div className="container">
-
-
-    <div className="navbar-header">
-    <button
-    type="button"
-    className="navbar-toggle collapsed"
-    data-toggle="collapse"
-    data-target="#navbar_collapse">
-    </button>
-    </div>
-
-
-    <div
-    className="collapse navbar-collapse"
-    id="navbar_collapse">
-    </div>
-    </div>
-    </nav>
-
-    <div className="navbar-placeholder">
     <div id="content">
-    <div className="mtl mbl lead">
+    <div className="text-center">
     <div className="animation-container">
     <img
     alt="PickUp Banner"
@@ -66,16 +71,12 @@ class App extends Component{
 
     </div>
     </div>
-    </div>
-    <div className="feature-block">
+
     <div className="container">
-    <div className="row text-center">
+    <div className="text-center">
     <div className="col-md-10 col-md-offset-1">
 
     <h2 className="feature-header">
-    <br /><br />
-
-    <br /><br />
 
     <br /><br />
 
@@ -117,10 +118,9 @@ class App extends Component{
     </div>
     </div>
     </div>
-    </div>
+
 
     <div className="feature-block black-bg">
-    <div className="container">
     <div className="row text-center">
     <div className="col-md-8 col-md-offset-2">
 
@@ -232,7 +232,6 @@ class App extends Component{
     </form>
 
     <div className="feature-block text-center">
-    <div className="container">
     <h2 className="feature-header">
     Contact Us:
     </h2>
@@ -254,9 +253,13 @@ class App extends Component{
     </div>
     </div>
     </div>
-    </div>
-    </div>
 
+    <SignUpModal
+      show={this.state.showSignUp}
+      onHide={this.closeSignUp}
+      className="text-center"
+      style={{color:'#000'}}
+    />
 
 
 

@@ -345,8 +345,8 @@ dd {
   overflow-y: scroll;
 }
 .container {
-  margin-right: auto;
-  margin-left: auto;
+  margin: auto;
+  margin-top: -200px;
   padding-left: 15px;
   padding-right: 15px;
 }

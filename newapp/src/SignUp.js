@@ -3,7 +3,7 @@ import './css/index.css';
 import registerServiceWorker from './registerServiceWorker';
 import ReactDOM from 'react-dom';
 
-class App extends Component{
+class SignUp extends Component{
 render(){
 return(
 <div className="App">
@@ -50,4 +50,4 @@ Thank You for signing up. We appreciate your business.
 
 }
 ReactDOM.render(<App />, document.getElementById('signup'));
-export default App;
+export default SignUp;
